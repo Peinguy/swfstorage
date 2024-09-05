@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Learn To Fly Idle</title>
+    <meta charset="utf8" />
+  </head>
+  <body>
+    <div id="ruffle"></div>
+    <script src='../Ruffle/ruffle.js'></script>
+    <script>
+      var swfobject = {};
+
+      swfobject.embedSWF = function (url, cont, width, height) {
+        var ruffle = window.RufflePlayer.newest(),
+          player = Object.assign(
+            document.getElementById(cont).appendChild(ruffle.createPlayer()),
+            {
+              width: width,
+              height: height,
+              style: "height:100%; width:100%; margin:0; padding:0",
+            }
+          );
+
+        player.load({ url: url });
+      };
+      swfobject.embedSWF("../ltf-idle.swf", "ruffle", 1000, 1000);
+    </script>
+  </body>
+</html>
