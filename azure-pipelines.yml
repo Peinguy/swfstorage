@@ -1,0 +1,4 @@
+steps:
+- task: AzureStaticWebApp@0
+  inputs:
+    app_location: '/'
